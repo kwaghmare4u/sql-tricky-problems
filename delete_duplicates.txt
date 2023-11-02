@@ -1,0 +1,9 @@
+Identify duplicates
+
+select firstName , lastName , count(*) from employee group by firstName , lastName having count(*) > 1
+
+Determine which record to delete
+- Delete record with max empId
+
+delete from employee where empid in
+(select max(empid) from employee group by firstName , lastName )
